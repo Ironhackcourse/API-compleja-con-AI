@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock de Empanadas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <h1>🥟 Stock de Empanadas</h1>
+    <p>Control de stock y ganancias</p>
+  </header>
+
+  <main class="contenedor">
+
+    <div id="mensaje" class="mensaje oculto"></div>
+
+    <!-- ========== RESUMEN DEL STOCK ========== -->
+    <section>
+      <h2>Resumen del stock (potencial)</h2>
+      <div id="resumen" class="resumen">
+        <p class="cargando">Cargando resumen...</p>
+      </div>
+    </section>
+
+    <!-- ========== NUEVA / EDITAR EMPANADA ========== -->
+    <section>
+      <h2 id="titulo-form">Nueva empanada</h2>
+      <form id="form-empanada" class="formulario">
+
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" required placeholder="Ej: Pabellón">
+        </div>
+
+        <div class="campos-fila">
+          <div class="campo">
+            <label for="precioBase">Precio base (€)</label>
+            <input type="number" id="precioBase" min="0" step="0.01" required>
+          </div>
+          <div class="campo">
+            <label for="pvp">PVP (€)</label>
+            <input type="number" id="pvp" min="0.01" step="0.01" required>
+          </div>
+          <div class="campo">
+            <label for="stock">Stock</label>
+            <input type="number" id="stock" min="0" step="1" value="0" required>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label>Ingredientes</label>
+          <div id="lista-ingredientes" class="ingredientes-check">
+            <p class="cargando">Cargando ingredientes...</p>
+          </div>
+        </div>
+
+        <div id="previa" class="previa"></div>
+
+        <button type="submit" id="btn-guardar" class="boton">Guardar empanada</button>
+        <button type="button" id="btn-cancelar" class="boton secundario oculto">Cancelar edición</button>
+      </form>
+    </section>
+
+    <!-- ========== LISTA DE EMPANADAS ========== -->
+    <section>
+      <h2>Empanadas</h2>
+
+      <div class="barra-orden">
+        <label for="orden">Ordenar por</label>
+        <select id="orden">
+          <option value="defecto">Orden de creación</option>
+          <option value="stock">Stock más bajo primero</option>
+          <option value="ganancia">Mayor ganancia por unidad</option>
+          <option value="nombre">Nombre (A-Z)</option>
+        </select>
+      </div>
+
+      <div id="lista-empanadas" class="lista">
+        <p class="cargando">Cargando empanadas...</p>
+      </div>
+    </section>
+
+    <!-- ========== VENTAS ========== -->
+    <section>
+      <h2>Ventas realizadas</h2>
+      <div id="resumen-ventas" class="periodos">
+        <p class="cargando">Cargando ventas...</p>
+      </div>
+
+      <h3 class="subtitulo">Últimas ventas</h3>
+      <div id="historial-ventas" class="hist-lista">
+        <p class="cargando">Cargando historial...</p>
+      </div>
+    </section>
+
+    <!-- ========== INGREDIENTES ========== -->
+    <section>
+      <h2>Ingredientes</h2>
+      <form id="form-ingrediente" class="formulario">
+        <div class="campos-fila">
+          <div class="campo">
+            <label for="ing-nombre">Nombre</label>
+            <input type="text" id="ing-nombre" required placeholder="Ej: Queso blanco">
+          </div>
+          <div class="campo">
+            <label for="ing-precio">Coste por empanada (€)</label>
+            <input type="number" id="ing-precio" min="0" step="0.01" required>
+          </div>
+        </div>
+        <button type="submit" id="btn-guardar-ing" class="boton">Añadir ingrediente</button>
+        <button type="button" id="btn-cancelar-ing" class="boton secundario oculto">Cancelar edición</button>
+      </form>
+
+      <div id="gestion-ingredientes" class="ing-lista">
+        <p class="cargando">Cargando ingredientes...</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

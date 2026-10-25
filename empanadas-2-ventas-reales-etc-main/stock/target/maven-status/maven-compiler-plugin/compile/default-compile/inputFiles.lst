@@ -1,0 +1,17 @@
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\config\CorsConfig.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\controller\EmpanadaController.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\controller\IngredienteController.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\controller\ResumenController.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\controller\VentaController.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\model\Empanada.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\model\Ingrediente.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\model\ResumenGanancias.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\model\ResumenVentas.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\model\Venta.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\repository\EmpanadaRepository.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\repository\IngredienteRepository.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\repository\VentaRepository.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\service\EmpanadaService.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\service\IngredienteService.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\service\VentaService.java
+C:\Users\albert\Desktop\stock\stock\src\main\java\com\empanadas\stock\StockApplication.java

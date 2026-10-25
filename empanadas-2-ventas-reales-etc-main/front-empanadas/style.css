@@ -1,0 +1,387 @@
+:root {
+  --fondo: #fdf6ec;
+  --tarjeta: #ffffff;
+  --texto: #3b2f2f;
+  --texto-suave: #8a7a6a;
+  --principal: #c8501e;      /* naranja empanada */
+  --borde: #ecdfcc;
+  --positivo: #2e7d32;
+  --negativo: #c62828;
+  --aviso: #b26a00;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+  background: var(--principal);
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+.cabecera h1 { margin: 0; font-size: 1.8rem; }
+.cabecera p { margin: 0.25rem 0 0; opacity: 0.9; }
+
+.contenedor {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+h2 {
+  margin: 2rem 0 1rem;
+  font-size: 1.3rem;
+  border-bottom: 2px solid var(--borde);
+  padding-bottom: 0.4rem;
+}
+
+/* ---------- Resumen ---------- */
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.dato {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+.dato .etiqueta {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.dato .valor {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* ---------- Lista de empanadas ---------- */
+.lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.tarjeta {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 1.1rem;
+  box-shadow: 0 2px 6px rgba(80, 50, 20, 0.06);
+}
+.tarjeta h3 { margin: 0 0 0.6rem; font-size: 1.2rem; }
+
+.ingredientes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+.chip {
+  background: #fbeadb;
+  color: var(--principal);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8rem;
+}
+.sin-ingredientes { color: var(--texto-suave); font-size: 0.85rem; }
+
+.fila {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  border-top: 1px dashed var(--borde);
+}
+.fila span:first-child { color: var(--texto-suave); }
+
+.positivo { color: var(--positivo); font-weight: 700; }
+.negativo { color: var(--negativo); font-weight: 700; }
+.stock-bajo { color: var(--aviso); font-weight: 700; }
+
+.aviso-pvp {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--aviso);
+}
+
+/* ---------- Mensajes ---------- */
+.mensaje {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #fdecea;
+  color: var(--negativo);
+  border: 1px solid #f5c2c0;
+}
+.oculto { display: none; }
+.cargando { color: var(--texto-suave); }
+
+/* ---------- Formulario ---------- */
+.formulario {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+.campo { margin-bottom: 1rem; }
+.campo label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+.campo input[type="text"],
+.campo input[type="number"] {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fffdf9;
+}
+.campo input:focus {
+  outline: 2px solid var(--principal);
+  outline-offset: 1px;
+}
+
+.campos-fila {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.ingredientes-check {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+.ingredientes-check label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-weight: 400;
+  color: var(--texto);
+  cursor: pointer;
+}
+.ingredientes-check label:has(input:checked) {
+  background: #fbeadb;
+  border-color: var(--principal);
+}
+
+.previa {
+  background: var(--fondo);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+}
+.previa .fila:first-child { border-top: none; }
+
+.boton {
+  background: var(--principal);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.boton:hover { filter: brightness(1.1); }
+.boton:disabled { opacity: 0.6; cursor: wait; }
+
+/* Mensaje de éxito (reutiliza la caja .mensaje) */
+.mensaje.exito {
+  background: #e8f5e9;
+  color: var(--positivo);
+  border-color: #b7dfb9;
+}
+
+/* ---------- Acciones de la tarjeta ---------- */
+.acciones {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+.boton-sec {
+  flex: 1;
+  background: #fff;
+  color: var(--principal);
+  border: 1px solid var(--principal);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.boton-sec:hover { background: #fbeadb; }
+.boton-sec.peligro {
+  color: var(--negativo);
+  border-color: var(--negativo);
+}
+.boton-sec.peligro:hover { background: #fdecea; }
+
+/* ---------- Control de stock +/- ---------- */
+.control-stock {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn-mini {
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 1px solid var(--borde);
+  border-radius: 50%;
+  background: #fff;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.btn-mini:hover:not(:disabled) { background: #fbeadb; border-color: var(--principal); }
+.btn-mini:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ---------- Modo edición ---------- */
+.boton.secundario {
+  background: #fff;
+  color: var(--texto-suave);
+  border: 1px solid var(--borde);
+  margin-left: 0.5rem;
+}
+.formulario.editando {
+  border-color: var(--principal);
+  box-shadow: 0 0 0 3px #fbeadb;
+}
+
+/* ---------- Mensajes siempre visibles al hacer scroll ---------- */
+.mensaje {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Gestión de ingredientes ---------- */
+.ing-lista {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.ing-fila {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+}
+.ing-info { flex: 1; min-width: 150px; }
+.ing-info strong { display: block; }
+.ing-uso { font-size: 0.8rem; color: var(--texto-suave); }
+.ing-precio { font-weight: 700; }
+.acciones-ing { display: flex; gap: 0.4rem; }
+.acciones-ing .boton-sec { flex: none; }
+
+/* ---------- Vender desde la tarjeta ---------- */
+.vender {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.9rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--borde);
+}
+.vender input {
+  width: 4.5rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fffdf9;
+}
+.vender .boton {
+  flex: 1;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.95rem;
+}
+.vender input:disabled { opacity: 0.5; }
+
+
+/* ---------- Ventas realizadas ---------- */
+.periodos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.periodo h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+
+.subtitulo {
+  margin: 1.6rem 0 0.6rem;
+  font-size: 1rem;
+  color: var(--texto-suave);
+}
+
+.hist-lista { display: grid; gap: 0.5rem; }
+.hist-fila {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+}
+.hist-info { flex: 1; min-width: 180px; }
+.hist-info strong { display: block; }
+.hist-fecha { font-size: 0.8rem; color: var(--texto-suave); }
+.hist-importes { text-align: right; font-size: 0.9rem; }
+.hist-fila .boton-sec { flex: none; }
+
+/* ---------- Selector de orden ---------- */
+.barra-orden {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.barra-orden label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+.barra-orden select {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fffdf9;
+  color: var(--texto);
+  cursor: pointer;
+}
+.barra-orden select:focus {
+  outline: 2px solid var(--principal);
+  outline-offset: 1px;
+}
